@@ -1,0 +1,3 @@
+URxvt.scrollBar: false
+URxvt.font: xft:Terminus-10
+URxvt.boldfont: xft:Terminus-10
