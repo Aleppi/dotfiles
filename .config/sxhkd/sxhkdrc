@@ -11,7 +11,7 @@ super + shift + Return
 
 # program launcher
 super + d
-    ~/dmenu/dmen.sh
+    ~/dmenu-patched/dmen.sh
 
 #super + d
 #	rofi -show run
