@@ -1,7 +1,3 @@
-
-" Don't try to be vi compatible
-set nocompatible
-
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
 
@@ -14,7 +10,7 @@ syntax on
 filetype plugin indent on
 
 " Load vim-plug
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 Plug 'bfrg/vim-cpp-enhanced-highlight',
 Plug 'vim-latex/vim-latex'
 Plug 'dylanaraps/wal.vim'
@@ -112,6 +108,8 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
+" Enable mouse
+set mouse=a
+
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
-set runtimepath=~/.nvim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.nvim/after

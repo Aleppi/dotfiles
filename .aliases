@@ -1,4 +1,5 @@
 alias myscrot='scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png'
+alias nv='nvim'
 
 alias logout='sudo pkill -u $USER'
 alias lla='ls -alF --group-directories-first --color=always'
