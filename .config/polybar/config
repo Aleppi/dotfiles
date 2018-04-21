@@ -32,7 +32,7 @@ alert = ${xrdb:color3:#222}
 
 [bar/mybar]
 
-monitor = ${env:MONITOR:LVDS-1}
+monitor = ${env:MONITOR:}
 
 ;width = 1500
 ;height = 27
@@ -64,7 +64,7 @@ font-1 = "Wuncon Siji:pixelsize=10:antialias=false;1"
 
 modules-left = bspwm i3
 modules-center = mpd
-modules-right = eth wlan backlight volume temperature memory cpu battery xkeyboard date
+modules-right = eth wlan volume temperature memory cpu battery xkeyboard date
 ;modules-right = eth backlight volume temperature memory cpu battery xkeyboard date
 
 ;tray-position = right

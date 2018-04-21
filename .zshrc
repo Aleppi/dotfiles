@@ -15,8 +15,7 @@ compinit
 
 source $HOME/.aliases
 
-PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
-export PATH
+export PATH="${PATH}:${HOME}/.local/bin:${HOME}/.local/share/nvim/plugged/vim-live-latex-preview/bin"
 export PS1="[%n@%M]:%~ "
 
 (cat ~/.cache/wal/sequences &)
