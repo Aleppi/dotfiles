@@ -214,6 +214,9 @@ ctrl + alt  + {comma,period}
 ctrl + alt + slash
     bspc config -d focused window_gap 20
 
+ctrl + alt + shift + slash
+    bspc config -d focused window_gap 0
+
 # Increase/decrease padding
 #ctrl + super + alt  + {comma,period}
 #    wat={false,true}; /home/aleppi/bin/bspwm_padding $wat

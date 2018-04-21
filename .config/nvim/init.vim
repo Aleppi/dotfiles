@@ -15,7 +15,8 @@ silent! if plug#begin('~/.local/share/nvim/plugged')
     Plug 'bfrg/vim-cpp-enhanced-highlight',
     "Plug 'vim-latex/vim-latex'
     Plug 'dylanaraps/wal.vim'
-    Plug 'Aleppi/vim-latex-live-preview', { 'for': 'tex' }
+    "Plug 'Aleppi/vim-latex-live-preview', { 'for': 'tex' }
+    Plug 'ying17zi/vim-live-latex-preview'
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim'
     Plug 'tpope/vim-surround'
@@ -204,14 +205,16 @@ autocmd FileType tex inoremap ;gt	{\textgreater}
 autocmd FileType tex inoremap ;lt	{\textless}
 
 """.bib
-"autocmd FileType bib inoremap ;a @article{<Enter><tab>author<Space>=<Space>"<++>",<Enter><tab>year<Space>=<Space>"<++>",<Enter><tab>title<Space>=<Space>"<++>",<Enter><tab>journal<Space>=<Space>"<++>",<Enter><tab>volume<Space>=<Space>"<++>",<Enter><tab>pages<Space>=<Space>"<++>",<Enter><tab>}<Enter><++><Esc>8kA,<Esc>i
-"autocmd FileType bib inoremap ;b @book{<Enter><tab>author<Space>=<Space>"<++>",<Enter><tab>year<Space>=<Space>"<++>",<Enter><tab>title<Space>=<Space>"<++>",<Enter><tab>publisher<Space>=<Space>"<++>",<Enter><tab>}<Enter><++><Esc>6kA,<Esc>i
-"autocmd FileType bib inoremap ;c @incollection{<Enter><tab>author<Space>=<Space>"<++>",<Enter><tab>title<Space>=<Space>"<++>",<Enter><tab>booktitle<Space>=<Space>"<++>",<Enter><tab>editor<Space>=<Space>"<++>",<Enter><tab>year<Space>=<Space>"<++>",<Enter><tab>publisher<Space>=<Space>"<++>",<Enter><tab>}<Enter><++><Esc>8kA,<Esc>i
+autocmd FileType bib inoremap ;a @article{<Enter><tab>author<Space>=<Space>"<++>",<Enter><tab>year<Space>=<Space>"<++>",<Enter><tab>title<Space>=<Space>"<++>",<Enter><tab>journal<Space>=<Space>"<++>",<Enter><tab>volume<Space>=<Space>"<++>",<Enter><tab>pages<Space>=<Space>"<++>",<Enter><tab>}<Enter><++><Esc>8kA,<Esc>i
+autocmd FileType bib inoremap ;b @book{<Enter><tab>author<Space>=<Space>"<++>",<Enter><tab>year<Space>=<Space>"<++>",<Enter><tab>title<Space>=<Space>"<++>",<Enter><tab>publisher<Space>=<Space>"<++>",<Enter><tab>}<Enter><++><Esc>6kA,<Esc>i
+autocmd FileType bib inoremap ;c @incollection{<Enter><tab>author<Space>=<Space>"<++>",<Enter><tab>title<Space>=<Space>"<++>",<Enter><tab>booktitle<Space>=<Space>"<++>",<Enter><tab>editor<Space>=<Space>"<++>",<Enter><tab>year<Space>=<Space>"<++>",<Enter><tab>publisher<Space>=<Space>"<++>",<Enter><tab>}<Enter><++><Esc>8kA,<Esc>i
 
 " Goyo plugin makes text more readable when writing prose:
 map <F10> :Goyo<CR>
 map <leader>f :Goyo<CR>
 inoremap <F10> <esc>:Goyo<CR>a
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 vmap <expr> ++ VMATH_YankAndAnalyse()
 nmap ++ vip++
@@ -219,5 +222,4 @@ nmap ++ vip++
 
 " Copy selected text to system clipboard (requires xclip installed):
 vnoremap <C-c> "cy<esc>:!echo -n '<C-R>c' \|<space>xclip<CR><enter>
-
 
