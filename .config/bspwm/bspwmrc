@@ -2,13 +2,7 @@
 wal -R
 sxhkd &
 
-if [ "$HOST" = "gentoo" ]; then
-    bspc monitor DP-0 -d 1 2 3 4
-    bspc monitor DP-2 -d 5 6 7
-    bspc monitor DVI-D-0 -d 8 9 10
-else
-    bspc monitor -d 一 二 三 四 五 六 七 八 九 十
-fi
+bspc monitor -d 一 二 三 四 五 六 七 八 九 十
 
 . "${HOME}/.cache/wal/colors.sh"
 
