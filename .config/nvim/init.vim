@@ -1,3 +1,5 @@
+let mapleader =" "
+
 " Turn on syntax highlighting
 syntax on
 
@@ -25,9 +27,6 @@ silent! if plug#begin('~/.local/share/nvim/plugged')
 endif
 
 set mouse=a
-
-" TODO: Pick a leader key
-" let mapleader = ","
 
 " Security
 set modelines=0
@@ -137,7 +136,7 @@ nnoremap S :%s//g<Left><Left>
 
 
 " Navigating with guides
-"inoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
+inoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
 vnoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
 map <Space><Tab> <Esc>/<++><Enter>"_c4l
 inoremap ;gui <++>
