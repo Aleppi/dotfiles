@@ -1,8 +1,9 @@
 #!/bin/sh
+
 wal -R
 sxhkd &
 
-if [[ $HOSTNAME == "gentoo" ]]; then
+if [[ $(hostname) == "gentoo" ]]; then
     bspc monitor DP-0 -d 1 2 3 4
     bspc monitor DP-2 -d 5 6 7
     bspc monitor DVI-D-0 -d 8 9 10
