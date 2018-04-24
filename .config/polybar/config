@@ -202,6 +202,8 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 [module/mpd]
 
 type = internal/mpd
+host = 127.0.0.1
+port = 6600
 ;format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 <label-time>
 format-online = <label-song>  <toggle> <label-time>
@@ -296,7 +298,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 [module/eth]
 
 type = internal/network
-interface = enp0s25
+interface = eno1
 interval = 3.0
 
 ;format-connected-underline = ${colors.primary}
@@ -333,7 +335,7 @@ label = %date% %time%
 
 [module/volume]
 
-type = internal/alsa
+type = internal/volume
 
 format-volume-prefix = " "
 format-volume-prefix-foreground = ${colors.foreground-alt}
