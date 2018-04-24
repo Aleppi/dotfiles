@@ -6,4 +6,5 @@ xset +fp /home/aleppi/.fonts
 xset fp rehash
 #wal -R
 xrdb ~/.Xresources
+mpd &
 exec bspwm
