@@ -2,6 +2,10 @@ alias myscrot='scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png'
 alias nv='nvim'
 
 alias logout='sudo pkill -u $USER'
+alias poweroff='sudo poweroff'
+alias shutdown='sudo shutdown now'
+alias reboot='sudo reboot'
+
 alias lla='ls -alF --group-directories-first --color=always'
 alias ll='ls -l --group-directories-first --color=always'
 alias la='ls -A --group-directories-first --color=always'

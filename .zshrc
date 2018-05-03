@@ -17,5 +17,6 @@ source $HOME/.aliases
 
 export PATH="${PATH}:${HOME}/.local/bin:${HOME}/.local/share/nvim/plugged/vim-live-latex-preview/bin"
 export PS1="[%n@%M]:%~ "
+export EDITOR="nvim"
 
 (cat ~/.cache/wal/sequences &)

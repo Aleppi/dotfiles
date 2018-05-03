@@ -29,6 +29,7 @@ kill_bar() {
 }
 
 main() {
+    kill_bar &
 	reload_bspwm &
 	reload_dunst &
     #reload_bar &
