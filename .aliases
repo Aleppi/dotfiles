@@ -5,6 +5,8 @@ alias logout='sudo pkill -u $USER'
 alias poweroff='sudo poweroff'
 alias shutdown='sudo shutdown now'
 alias reboot='sudo reboot'
+alias hibernate='sudo pm-hibernate'
+alias sleep='sudo pm-sleep'
 
 alias lla='ls -alF --group-directories-first --color=always'
 alias ll='ls -l --group-directories-first --color=always'
@@ -34,3 +36,14 @@ alias grau='git remote add upstream'
 # # ex:  git push origin precise:precise
 # # ex:  git push origin v2.0.0:v2.0.0
 # alias gptr='git push origin $1:$2'
+
+# TeX
+alias Txa="cp ~/Documents/LaTeX/article.tex"
+alias Txs="cp ~/Documents/LaTeX/beamer.tex"
+alias Txh="cp ~/Documents/LaTeX/handout.tex"
+alias TC='texclear'
+
+# Internet
+# alias yt="youtube-dl --add-metadata -ic" # Download video link
+# alias yta="youtube-dl --add-metadata -xic" # Download only audio
+# alias YT="youtube-viewer"
