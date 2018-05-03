@@ -10,7 +10,7 @@ found at [Aleppi/dmenu-patched](https://github.com/Aleppi/dmenu-patched).
 ## List of dependecies
 * bspwm
 * sxhkd
-* polybar
+* polybar (compiled with mpd, alsa, github and network modules enabled)
 * zsh
 * Terminus
 * Unifont
