@@ -14,6 +14,7 @@ compinit
 # End of lines added by compinstall
 
 source $HOME/.aliases
+source $HOME/.variables
 
 export PATH="${PATH}:${HOME}/.local/bin:${HOME}/.local/share/nvim/plugged/vim-live-latex-preview/bin"
 export PS1="[%n@%M]:%~ "

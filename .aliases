@@ -47,3 +47,6 @@ alias TC='texclear'
 # alias yt="youtube-dl --add-metadata -ic" # Download video link
 # alias yta="youtube-dl --add-metadata -xic" # Download only audio
 # alias YT="youtube-viewer"
+
+# GitPi
+alias gitpi='ssh pi@$GITPI_IP'
