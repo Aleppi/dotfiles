@@ -1,5 +1,6 @@
 alias myscrot='scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png'
 alias nv='nvim'
+alias snv='sudo nvim'
 
 alias logout='sudo pkill -u $USER'
 alias poweroff='sudo poweroff'
