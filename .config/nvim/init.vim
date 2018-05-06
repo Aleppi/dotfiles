@@ -15,14 +15,13 @@ endif
 " Load vim-plug
 silent! if plug#begin('~/.local/share/nvim/plugged')
     Plug 'bfrg/vim-cpp-enhanced-highlight',
-    "Plug 'vim-latex/vim-latex'
     Plug 'dylanaraps/wal.vim'
-    "Plug 'Aleppi/vim-latex-live-preview', { 'for': 'tex' }
     Plug 'ying17zi/vim-live-latex-preview'
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim'
     Plug 'tpope/vim-surround'
     Plug 'atweiden/vim-vmath'
+    Plug 'terryma/vim-multiple-cursors'
     call plug#end()
 endif
 
@@ -135,11 +134,34 @@ map <C-l> <C-w>l
 nnoremap S :%s//g<Left><Left>
 
 
+" Open corresponding.pdf
+map <leader>p :!mupdf <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
+
+" Compile document
+map <leader>c :!compiler <c-r>%<CR>
+
+" Get line, word and character counts with F3:
+	map <F3> :!wc <C-R>%<CR>
+
+" Spell-check set to F6:
+	map <F6> :setlocal spell! spelllang=en,sv<CR>
+
+" Enable autocompletion:
+	"set wildmode=longest,list,full
+	"set wildmenu
+
+" Runs a script that cleans out tex build files whenever I close out of a .tex file.
+	autocmd VimLeave *.tex !texclear
+
+
 " Navigating with guides
 inoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
 vnoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
 map <Space><Tab> <Esc>/<++><Enter>"_c4l
 inoremap ;gui <++>
+
+
+
 
 """LATEX
 " Word count:
