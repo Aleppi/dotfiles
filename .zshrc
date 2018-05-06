@@ -16,7 +16,7 @@ compinit
 source $HOME/.aliases
 source $HOME/.variables
 
-export PATH="${PATH}:${HOME}/.local/bin:${HOME}/.local/share/nvim/plugged/vim-live-latex-preview/bin"
+export PATH="${PATH}:${HOME}/.local/bin:${HOME}/.local/share/nvim/plugged/vim-live-latex-preview/bin:${HOME}/.scripts"
 export PS1="[%n@%M]:%~ "
 export EDITOR="nvim"
 

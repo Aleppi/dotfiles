@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ find . -maxdepth 1 -regextype gnu-awk -regex "^.*\.(4tc|xref|tmp|pyc|pyo|fls|vrb|fdb_latexmk|bak|swp|aux|log|synctex\(busy\)|lof|nav|out|snm|toc|bcf|run\.xml|synctex\.gz|blg|bbl)" -delete
