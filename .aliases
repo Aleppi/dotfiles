@@ -25,6 +25,7 @@ alias gcmu="git commit -m 'update'"
 alias gcau="git commit -am 'update'"
 alias gst='git status'
 alias gpom='git push --all origin'
+alias gppi='git push --all pi'
 alias gpum='git pull --all upstream'
 alias gfum='git fetch --all upstream'
 alias gp='git pull --all'

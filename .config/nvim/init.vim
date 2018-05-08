@@ -118,7 +118,6 @@ set expandtab
 set updatetime=1000
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
-let g:livepreview_previewer = 'mupdf'
 
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 set splitbelow
