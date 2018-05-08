@@ -17,7 +17,8 @@ source $HOME/.aliases
 source $HOME/.variables
 
 export PATH="${PATH}:${HOME}/.local/bin:${HOME}/.local/share/nvim/plugged/vim-live-latex-preview/bin:${HOME}/.scripts"
-export PS1="[%n@%M]:%~ "
+#export PS1="[%n@%M]:%~ "
+export PS1="%{$(tput setaf 1)%}[%{$(tput setaf 5)%}%n%{$(tput setaf 1)%}@%{$(tput setaf 6)%}%M%{$(tput setaf 1)%}]:%{$(tput setaf 7)%}%~ "
 export EDITOR="nvim"
 
 (cat ~/.cache/wal/sequences &)
