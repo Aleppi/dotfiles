@@ -211,10 +211,10 @@ bspc node -v {-20 0,0 20,0 -20,20 0}
 ctrl + alt  + {comma,period}
     bspc config -d focused window_gap $((`bspc config -d focused window_gap` {-,+} 5 ))
 
-ctrl + alt + slash
-    bspc config -d focused window_gap 20
+ctrl + alt + Pause
+    bspc config -d focused window_gap 5
 
-ctrl + alt + shift + slash
+ctrl + alt + shift + Pause
     bspc config -d focused window_gap 0
 
 # Increase/decrease padding
