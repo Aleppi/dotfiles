@@ -51,4 +51,4 @@ alias TC='texclear'
 # alias YT="youtube-viewer"
 
 # GitPi
-alias gitpi='ssh pi@$GITPI_IP'
+alias gitpi='ssh gitpi'
