@@ -1,3 +1,4 @@
 #!/bin/sh
 
-rsync -aze ssh ~/Pictures/Wallpapers gitpi:~/Pictures --bwlimit=5000 --progress --delete
+rsync -azre ssh gitpi:~/Pictures/Wallpapers ~/Pictures --bwlimit=5000 --progress
+rsync -azre ssh ~/Pictures/Wallpapers gitpi:~/Pictures --bwlimit=5000 --progress --delete
