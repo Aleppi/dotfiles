@@ -12,7 +12,7 @@ found at [Aleppi/dmenu-patched](https://github.com/Aleppi/dmenu-patched).
 * sxhkd
 * polybar (compiled with mpd, alsa, github and network modules enabled)
 * zsh
-* Terminus
+* Terminus (as well as the powerline patched version)
 * Unifont
 * Siji icons
 * urxvt
