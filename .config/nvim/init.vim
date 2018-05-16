@@ -22,8 +22,77 @@ silent! if plug#begin('~/.local/share/nvim/plugged')
     Plug 'tpope/vim-surround'
     Plug 'atweiden/vim-vmath'
     Plug 'terryma/vim-multiple-cursors'
+    Plug 'autozimu/LanguageClient-neovim', {
+        \ 'branch': 'next',
+        \ 'do': 'bash install.sh',
+        \ }
+    Plug 'junegunn/fzf'
+    Plug 'vim-airline/vim-airline/'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'tpope/vim-fugitive'
+    if has('nvim')
+        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    else
+        Plug 'Shougo/deoplete.nvim'
+        Plug 'roxma/nvim-yarp'
+        Plug 'roxma/vim-hug-neovim-rpc'
+    endif
     call plug#end()
 endif
+
+" deoplete options
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+
+" disable autocomplete by default
+let b:deoplete_disable_auto_complete=1
+let g:deoplete_disable_auto_complete=1
+call deoplete#custom#buffer_option('auto_complete', v:false)
+
+if !exists('g:deoplete#omni#input_patterns')
+    let g:deoplete#omni#input_patterns = {}
+endif
+
+" Disable the candidates in Comment/String syntaxes.
+call deoplete#custom#source('_',
+            \ 'disabled_syntaxes', ['Comment', 'String'])
+
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+" set sources
+let g:deoplete#sources = {}
+let g:deoplete#sources.cpp = ['LanguageClient']
+let g:deoplete#sources.python = ['LanguageClient']
+let g:deoplete#sources.python3 = ['LanguageClient']
+let g:deoplete#sources.rust = ['LanguageClient']
+let g:deoplete#sources.c = ['LanguageClient']
+let g:deoplete#sources.vim = ['vim']
+
+
+let g:airline_powerline_fonts = 1
+let g:Powerline_symbols = 'powerline'
+"let g:airline_skip_empty_sections = 1
+let g:airline#extensions#whitespace#enabled = 0 " turn off the whitespace extension
+"let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline_theme='wal'
+set noshowmode
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.columnr = ''
+let g:airline_symbols.maxlinenr = ''
+
+
 
 set mouse=a
 
@@ -140,17 +209,17 @@ map <leader>p :!mupdf <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
 map <leader>c :!compiler <c-r>%<CR>
 
 " Get line, word and character counts with F3:
-	map <F3> :!wc <C-R>%<CR>
+map <F3> :!wc <C-R>%<CR>
 
 " Spell-check set to F6:
-	map <F6> :setlocal spell! spelllang=en,sv<CR>
+map <F6> :setlocal spell! spelllang=en,sv<CR>
 
 " Enable autocompletion:
-	"set wildmode=longest,list,full
-	"set wildmenu
+"set wildmode=longest,list,full
+"set wildmenu
 
 " Runs a script that cleans out tex build files whenever I close out of a .tex file.
-	autocmd VimLeave *.tex !texclear
+autocmd VimLeave *.tex !texclear
 
 
 " Navigating with guides
