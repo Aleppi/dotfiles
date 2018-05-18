@@ -58,13 +58,13 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = "xos4 Terminus:size=10:antialias=false"
-font-2 = "Unifont:size=10:antialias=false"
-font-1 = "Wuncon Siji:pixelsize=10:antialias=false;1"
+font-0 = "Terminus:size=12:antialias=false"
+font-2 = "Unifont:size=12:antialias=false"
+font-1 = "Siji:pixelsize=12:antialias=false;1"
 
 modules-left = bspwm i3
 modules-center = mpd
-modules-right = eth wlan volume temperature memory cpu battery xkeyboard date
+modules-right = eth wlan volume temperature memory cpu battery battery2 xkeyboard date
 ;modules-right = eth backlight volume temperature memory cpu battery xkeyboard date
 
 ;tray-position = right
@@ -273,7 +273,7 @@ label = %mb_used%
 [module/wlan]
 
 type = internal/network
-interface = wlp2s0
+interface = wlp4s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -298,7 +298,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 [module/eth]
 
 type = internal/network
-interface = eno1
+interface = enp0s31f6
 interval = 3.0
 
 ;format-connected-underline = ${colors.primary}
@@ -371,7 +371,7 @@ bar-volume-empty-foreground = $444444
 type = internal/battery
 battery = BAT0
 adapter = AC
-full-at = 100
+full-at = 98
 
 format-charging = <animation-charging> <label-charging>
 ;format-charging-underline = ${colors.primary}
@@ -394,6 +394,34 @@ animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
+
+[module/battery2]
+
+type = internal/battery
+battery = BAT1
+adapter = AC
+full-at = 99
+
+format-charging = <animation-charging> <label-charging>
+;format-charging-underline = ${colors.primary}
+
+format-discharging = <ramp-capacity> <label-discharging>
+;format-discharging-underline = ${self.format-charging-underline}
+
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground-alt}
+;format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 750
 
 
 [module/temperature]

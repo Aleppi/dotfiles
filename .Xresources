@@ -1,8 +1,8 @@
 URxvt.scrollBar: false
-!URxvt.font: xft:xos4 Terminus:size=10
-!URxvt.boldfont: xft:xos4 Terminus:size=10:style=bold
+!URxvt.font: xft:xos4 Terminus:size=12
+!URxvt.boldfont: xft:xos4 Terminus:size=12:style=bold
 
-URxvt.font:             xft:Terminus:antialias=true:style=Regular:size=10,xft:Terminess Powerline:antialias=true:style=Regular:size=10
-URxvt.boldFont:         xft:Terminus:antialias=true:style=Bold:size=10,xft:Terminess Powerline:antialias=true:style=Bold:size=10
-URxvt.italicFont:       xft:Terminus:antialias=true:style=Regular:size=10,xft:Terminess Powerline:antialias=true:style=Regular:size=10
-URxvt.bolditalicFont:   xft:Terminus:antialias=true:style=Bold:size=10,xft:Terminess Powerline:antialias=true:style=Bold:size=10
+URxvt.font:             xft:Terminus:antialias=true:style=Regular:size=12,xft:Terminess Powerline:antialias=true:style=Regular:size=12
+URxvt.boldFont:         xft:Terminus:antialias=true:style=Bold:size=12,xft:Terminess Powerline:antialias=true:style=Bold:size=12
+URxvt.italicFont:       xft:Terminus:antialias=true:style=Regular:size=12,xft:Terminess Powerline:antialias=true:style=Regular:size=12
+URxvt.bolditalicFont:   xft:Terminus:antialias=true:style=Bold:size=12,xft:Terminess Powerline:antialias=true:style=Bold:size=12

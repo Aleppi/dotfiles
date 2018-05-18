@@ -23,6 +23,7 @@ found at [Aleppi/dmenu-patched](https://github.com/Aleppi/dmenu-patched).
 * wal
 * dunst
 * dmenu
+* oomox
 
 ## Current issues
 Dunst hasn't been properly configured yet.
