@@ -2,7 +2,7 @@
 
 . "${HOME}/.cache/wal/colors.sh"
 
-if [ $HOST == "t25" ] then
+if [[ $(hostname) == "t25" ]]; then
     choices="laptop\nlaptopdual\nmirror\nHDMI\nManual selection"
     
     chosen=$(echo -e "$choices" | dmen.sh)
@@ -14,7 +14,7 @@ if [ $HOST == "t25" ] then
     	HDMI) xrandr --output HDMI2 --auto --output eDP1 --off ;;
     	"Manual selection") arandr ;;
     esac
-elif [ $HOST == "x200" ] then
+elif [[ $(hostname) == "x200" ]]; then
     choices="laptop\nlaptopdual\nmirror\nVGA\nManual selection"
     
     chosen=$(echo -e "$choices" | dmen.sh)
@@ -28,4 +28,4 @@ elif [ $HOST == "x200" ] then
     esac
 fi
 # Relaunch polybar if there was a selection.
-[ "$chosen" == "" ] || ~/.config/polybar/launch.sh
+[[ "$chosen" == "" ]] || ~/.config/polybar/launch.sh
