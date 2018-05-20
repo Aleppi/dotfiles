@@ -11,7 +11,7 @@ super + shift + Return
 
 # program launcher
 super + d
-    /usr/local/bin/dmen.sh
+    /usr/local/bin/dmen_run.sh
 
 #super + d
 #	rofi -show run

@@ -1,0 +1,31 @@
+#!/bin/bash
+
+. "${HOME}/.cache/wal/colors.sh"
+
+if [ $HOST == "t25" ] then
+    choices="laptop\nlaptopdual\nmirror\nHDMI\nManual selection"
+    
+    chosen=$(echo -e "$choices" | dmen.sh)
+    
+    case "$chosen" in
+    	laptop) xrandr --output eDP1 --auto --output HDMI2 --off ;;
+    	laptopdual) xrandr --output eDP1 --auto --output HDMI2 --auto --right-of eDP1 ;;
+        mirror) xrandr --output eDP1 --auto --output HDMI2 --auto --scale-from 1920x1080 --same-as eDP1 ;;
+    	HDMI) xrandr --output HDMI2 --auto --output eDP1 --off ;;
+    	"Manual selection") arandr ;;
+    esac
+elif [ $HOST == "x200" ] then
+    choices="laptop\nlaptopdual\nmirror\nVGA\nManual selection"
+    
+    chosen=$(echo -e "$choices" | dmen.sh)
+    
+    case "$chosen" in
+    	laptop) xrandr --output LVDS-1 --auto --output VGA-1 --off ;;
+    	laptopdual) xrandr --output LVDS-1 --auto --output VGA-1 --auto --right-of LVDS-1 ;;
+        mirror) xrandr --output LVDS-1 --auto --output VGA-1 --auto --scale-from 1280x800 --same-as LVDS-1 ;;
+    	VGA) xrandr --output VGA-1 --auto --output LVDS-1 --off ;;
+    	"Manual selection") arandr ;;
+    esac
+fi
+# Relaunch polybar if there was a selection.
+[ "$chosen" == "" ] || ~/.config/polybar/launch.sh
