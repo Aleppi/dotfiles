@@ -2,7 +2,7 @@ URxvt.scrollBar: false
 !URxvt.font: xft:xos4 Terminus:size=12
 !URxvt.boldfont: xft:xos4 Terminus:size=12:style=bold
 
-URxvt.font:             xft:xos4 Terminus:antialias=true:style=Regular:size=12,xft:xos4 Terminess Powerline:antialias=true:style=Regular:size=12
-URxvt.boldFont:         xft:xos4 Terminus:antialias=true:style=Bold:size=12,xft:xos4 Terminess Powerline:antialias=true:style=Bold:size=12
-URxvt.italicFont:       xft:xos4 Terminus:antialias=true:style=Regular:size=12,xft:xos4 Terminess Powerline:antialias=true:style=Regular:size=12
-URxvt.bolditalicFont:   xft:xos4 Terminus:antialias=true:style=Bold:size=12,xft:xos4 Terminess Powerline:antialias=true:style=Bold:size=12
+URxvt.font:             xft:Terminus:antialias=true:style=Regular:size=12,xft:Terminess Powerline:antialias=true:style=Regular:size=12
+URxvt.boldFont:         xft:Terminus:antialias=true:style=Bold:size=12,xft:Terminess Powerline:antialias=true:style=Bold:size=12
+URxvt.italicFont:       xft:Terminus:antialias=true:style=Regular:size=12,xft:Terminess Powerline:antialias=true:style=Regular:size=12
+URxvt.bolditalicFont:   xft:Terminus:antialias=true:style=Bold:size=12,xft:Terminess Powerline:antialias=true:style=Bold:size=12

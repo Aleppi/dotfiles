@@ -50,6 +50,9 @@ XF86AudioLowerVolume
 XF86AudioMute
     amixer set Master toggle
 
+XF86AudioMicMute
+    amixer set Capture toggle
+
 super + {Down,Left,Right,Up}
     mpc {toggle,prev,next,stop}
 
