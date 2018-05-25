@@ -101,6 +101,10 @@ set modelines=0
 
 " Show line numbers
 set number
+set relativenumber
+
+autocmd WinLeave * : set norelativenumber
+autocmd WinEnter * : set relativenumber
 
 " Show file stats
 set ruler
