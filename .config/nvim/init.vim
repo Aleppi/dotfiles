@@ -141,7 +141,6 @@ set ttyfast
 set laststatus=2
 
 " Last line
-set showmode
 set showcmd
 
 " Searching
@@ -306,8 +305,24 @@ autocmd FileType bib inoremap ;c @incollection{<Enter><tab>author<Space>=<Space>
 map <F10> :Goyo<CR>
 map <leader>f :Goyo<CR>
 inoremap <F10> <esc>:Goyo<CR>a
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
+
+function! s:goyo_enter()
+    set nonumber
+    set norelativenumber
+    set noshowcmd
+    set scrolloff=999
+    Limelight
+endfunction
+
+function! s:goyo_leave()
+    set number
+    set relativenumber
+    set scrolloff=3
+    Limelight!
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 vmap <expr> ++ VMATH_YankAndAnalyse()
 nmap ++ vip++
