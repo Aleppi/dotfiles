@@ -204,7 +204,7 @@ super + alt + shift + {h,j,k,l}
 
 # move a floating window
 super + {Left,Down,Up,Right}
-bspc node -v {-20 0,0 20,0 -20,20 0}
+    bspc node -v {-20 0,0 20,0 -20,20 0}
 
 #
 # Gaps
@@ -223,3 +223,8 @@ ctrl + alt + shift + Pause
 # Increase/decrease padding
 #ctrl + super + alt  + {comma,period}
 #    wat={false,true}; /home/aleppi/bin/bspwm_padding $wat
+
+XF86TouchpadToggle
+    xinputtoggle 14; \
+    xinputtoggle 10
+
