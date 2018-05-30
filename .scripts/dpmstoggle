@@ -1,0 +1,9 @@
+#!/bin/bash
+
+state=$(xset q | grep "DPMS is" | grep -o "Enabled")
+
+if [ "$state" == "Enabled" ]; then
+    xset -dpms s off
+else
+    xset +dpms s on
+fi

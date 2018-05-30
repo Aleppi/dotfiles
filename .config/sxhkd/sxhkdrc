@@ -224,7 +224,15 @@ ctrl + alt + shift + Pause
 #ctrl + super + alt  + {comma,period}
 #    wat={false,true}; /home/aleppi/bin/bspwm_padding $wat
 
+XF86MonBrightnessUp
+    xbacklight -inc 10
+
+XF86MonBrightnessDown
+    xbacklight -dec 10
+
 XF86TouchpadToggle
     xinputtoggle 14; \
     xinputtoggle 10
 
+XF86Display
+    dpmstoggle
