@@ -39,7 +39,7 @@ super + BackSpace
     lock
 
 Print
-    myscrot
+    screenshot
 
 XF86AudioRaiseVolume
     amixer set Master 5%+

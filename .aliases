@@ -1,4 +1,3 @@
-alias myscrot='scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png'
 alias nv='nvim'
 alias snv='sudo nvim'
 
@@ -7,7 +6,9 @@ alias poweroff='sudo poweroff'
 alias shutdown='sudo shutdown now'
 alias reboot='sudo reboot'
 alias hibernate='sudo pm-hibernate'
-alias sleep='sudo pm-sleep'
+alias sleep='sudo pm-suspend'
+alias zzz='sudo zzz'
+alias ZZZ='sudo ZZZ'
 
 alias lla='ls -alF --group-directories-first --color=always'
 alias ll='ls -l --group-directories-first --color=always'

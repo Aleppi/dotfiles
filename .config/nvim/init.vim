@@ -37,6 +37,9 @@ silent! if plug#begin('~/.local/share/nvim/plugged')
         Plug 'roxma/nvim-yarp'
         Plug 'roxma/vim-hug-neovim-rpc'
     endif
+    Plug 'zchee/deoplete-clang'
+    Plug 'Shougo/neoinclude.vim'
+    Plug 'lionawurscht/deoplete-biblatex'
     call plug#end()
 endif
 
@@ -49,6 +52,13 @@ let b:deoplete_disable_auto_complete=1
 let g:deoplete_disable_auto_complete=1
 call deoplete#custom#buffer_option('auto_complete', v:false)
 
+function g:Multiple_cursors_before()
+         call deoplete#custom#buffer_option('auto_complete', v:false)
+       endfunction
+       function g:Multiple_cursors_after()
+         call deoplete#custom#buffer_option('auto_complete', v:true)
+endfunction
+
 if !exists('g:deoplete#omni#input_patterns')
     let g:deoplete#omni#input_patterns = {}
 endif
@@ -59,15 +69,22 @@ call deoplete#custom#source('_',
 
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
+" deoplete tab-complete
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
+let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
+let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
+
 " set sources
 let g:deoplete#sources = {}
-let g:deoplete#sources.cpp = ['LanguageClient']
-let g:deoplete#sources.python = ['LanguageClient']
-let g:deoplete#sources.python3 = ['LanguageClient']
-let g:deoplete#sources.rust = ['LanguageClient']
-let g:deoplete#sources.c = ['LanguageClient']
-let g:deoplete#sources.vim = ['vim']
+let g:deoplete#sources#cpp = ['LanguageClient']
+let g:deoplete#sources#python = ['LanguageClient']
+let g:deoplete#sources#python3 = ['LanguageClient']
+let g:deoplete#sources#rust = ['LanguageClient']
+let g:deoplete#sources#c = ['LanguageClient']
+let g:deoplete#sources#vim = ['vim']
 
+call deoplete#enable()
 
 let g:airline_powerline_fonts = 1
 let g:Powerline_symbols = 'powerline'
