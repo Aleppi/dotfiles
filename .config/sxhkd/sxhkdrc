@@ -41,17 +41,31 @@ super + BackSpace
 Print
     screenshot
 
+### PulseAudio Audio Control
 XF86AudioRaiseVolume
-    amixer set Master 5%+
+    pamixer -i 5
 
 XF86AudioLowerVolume
-    amixer set Master 5%-
+    pamixer -d 5
 
 XF86AudioMute
-    amixer set Master toggle
+    pamixer -t
 
 XF86AudioMicMute
-    amixer set Capture toggle
+    pamixer --default-source -t
+
+### ALSA Audio Control
+#XF86AudioRaiseVolume
+#    amixer set Master 5%+
+
+#XF86AudioLowerVolume
+#    amixer set Master 5%-
+
+#XF86AudioMute
+#    amixer set Master toggle
+
+#XF86AudioMicMute
+#    amixer set Capture toggle
 
 super + {Down,Left,Right,Up}
     mpc {toggle,prev,next,stop}
