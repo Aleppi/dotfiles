@@ -16,8 +16,8 @@ reload_dunst() {
         -bf "${color0:-#000000}" \
         -cf "${color0:-#000000}" \
         -nf "${color0:-#000000}" \
-        -fn "Terminus 10" \
-        -geometry "600x40-150+120" &
+        -fn "Terminus 12" \
+        -geometry "300x30-20+50" &
 }
 
 reload_bspwm() {
