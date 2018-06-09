@@ -20,6 +20,17 @@ super + d
 #super + w
 #    rofi -show window
 
+# web browser
+super + w
+    $BROWSER
+
+# file manager
+super + f
+    urxvtc -e ranger
+
+super + shift + f
+    urxvtc -e sudo ranger /
+
 # make sxhkd reload its configuration files
 super + r
 	pkill -USR1 -x sxhkd
