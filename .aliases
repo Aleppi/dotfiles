@@ -1,4 +1,6 @@
+alias v='nvim'
 alias nv='nvim'
+alias sv='sudo nvim'
 alias snv='sudo nvim'
 
 alias logout='sudo pkill -u $USER'
