@@ -297,7 +297,7 @@ autocmd FileType tex inoremap ;rn (\ref{})<++><Esc>F}i
 
 """LATEX Logical symbols
 autocmd FileType tex inoremap ;m $$<Space><++><Esc>2T$i
-autocmd FileType tex inoremap ;M $$$$<Enter><Enter><++><Esc>2k$hi
+autocmd FileType tex inoremap ;M $$$$<Enter><++><Esc>2k$hi
 autocmd FileType tex inoremap ;neg {\neg}
 autocmd FileType tex inoremap ;V {\vee}
 autocmd FileType tex inoremap ;or {\vee}
@@ -346,5 +346,5 @@ nmap ++ vip++
 
 
 " Copy selected text to system clipboard (requires xclip installed):
-vnoremap <C-c> "cy<esc>:!echo -n '<C-R>c' \|<space>xclip<CR><enter>
+"vnoremap <C-c> "cy<esc>:!echo -n '<C-R>c' \|<space>xclip<CR><enter>
 
