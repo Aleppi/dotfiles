@@ -296,8 +296,8 @@ autocmd FileType tex inoremap ;col \begin{columns}[T]<Enter>\begin{column}{.5\te
 autocmd FileType tex inoremap ;rn (\ref{})<++><Esc>F}i
 
 """LATEX Logical symbols
-autocmd FileType tex inoremap ;m $$<Space><++><Esc>2T$i
-autocmd FileType tex inoremap ;M $$$$<Enter><++><Esc>2k$hi
+autocmd FileType tex inoremap ;m $$<++><Esc>2T$i
+autocmd FileType tex inoremap ;M \[\]<Space><Enter><++><Esc>2k\[ hi
 autocmd FileType tex inoremap ;neg {\neg}
 autocmd FileType tex inoremap ;V {\vee}
 autocmd FileType tex inoremap ;or {\vee}
