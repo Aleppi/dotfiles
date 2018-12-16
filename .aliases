@@ -43,9 +43,9 @@ alias grau='git remote add upstream'
 # alias gptr='git push origin $1:$2'
 
 # TeX
-alias Txa="cp ~/Documents/LaTeX/article.tex"
-alias Txs="cp ~/Documents/LaTeX/beamer.tex"
-alias Txh="cp ~/Documents/LaTeX/handout.tex"
+alias Txa="cp ~/Documents/Templates/LaTeX/article.tex"
+alias Txs="cp ~/Documents/Templates/LaTeX/beamer.tex"
+alias Txh="cp ~/Documents/Templates/LaTeX/handout.tex"
 alias TC='texclear'
 
 # Internet
