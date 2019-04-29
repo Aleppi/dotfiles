@@ -6,19 +6,19 @@
 # Source generated colors.
 . "${HOME}/.cache/wal/colors.sh"
 
-reload_dunst() {
-    pkill dunst
-    dunst \
-        -lb "${color15:-#FFFFFF}" \
-        -nb "${color15:-#FFFFFF}" \
-        -cb "${color15:-#FFFFFF}" \
-        -lf "${color0:-#000000}" \
-        -bf "${color0:-#000000}" \
-        -cf "${color0:-#000000}" \
-        -nf "${color0:-#000000}" \
-        -fn "Terminus 12" \
-        -geometry "300x30-20+50" &
-}
+#reload_dunst() {
+#    pkill dunst
+#    dunst \
+#        -lb "${color15:-#FFFFFF}" \
+#        -nb "${color15:-#FFFFFF}" \
+#        -cb "${color15:-#FFFFFF}" \
+#        -lf "${color0:-#000000}" \
+#        -bf "${color0:-#000000}" \
+#        -cf "${color0:-#000000}" \
+#        -nf "${color0:-#000000}" \
+#        -fn "Terminus 12" \
+#        -geometry "300x30-20+50" &
+#}
 
 reload_bspwm() {
 	nohup zsh ~/.config/bspwm/bspwmrc

@@ -54,4 +54,7 @@ bspc rule -a feh:fehwrap-fs state=fullscreen
 
 # Autorun stuff
 $HOME/.config/polybar/launch.sh
+ln -sf "${HOME}/.cache/wal/dunstrc" "${HOME}/.config/dunst/dunstrc"
+pkill dunst
+dunst &
 #urxvtc -name URxvt-dmesg -e dmesg -w
