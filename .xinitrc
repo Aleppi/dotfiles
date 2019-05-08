@@ -9,7 +9,8 @@ xset fp rehash
 xrdb ~/.Xresources
 mpd &
 xrandr --setprovideroffloadsink nouveau Intel
-xinput --disable "14"
+#xinput --disable "14"
 xinput --disable "10"
+xbacklight -set 100
 #exec bspwm
 exec dbus-launch --exit-with-session bspwm
