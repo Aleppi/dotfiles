@@ -105,8 +105,8 @@ super + g
 	bspc node -s biggest
 
 # Focus selected window
-super + x
-    bspc node -f
+#super + x
+#    bspc node -f
 
 # Rotate desktop
 super + alt + {comma,period}
@@ -136,7 +136,7 @@ super + {_,shift} + backslash
 # set the window state
 super + shift + space
     bspc node -t "~"{tiled,pseudo_tiled}
-super + {space,f}
+super + {space,x}
     bspc node -t "~"{floating,fullscreen}
 
 # set the node flags

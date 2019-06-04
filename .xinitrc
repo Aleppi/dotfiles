@@ -12,5 +12,5 @@ xrandr --setprovideroffloadsink nouveau Intel
 #xinput --disable "14"
 xinput --disable "10"
 xbacklight -set 100
-#exec bspwm
-exec dbus-launch --exit-with-session bspwm
+exec bspwm
+#exec ck-launch-session dbus-launch --exit-with-session bspwm
