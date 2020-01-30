@@ -17,7 +17,7 @@ source $HOME/.aliases
 source $HOME/.variables
 source /etc/profile
 #export PS1="[%n@%M]:%~ "
-export PATH="${PATH}:/usr/bin:${HOME}/.local/bin:${HOME}/.local/share/nvim/plugged/vim-live-latex-preview/bin:${HOME}/.scripts"
+export PATH="${PATH}:/usr/local/MATLAB/r2019b/bin:${HOME}/.local/bin:${HOME}/.local/share/nvim/plugged/vim-live-latex-preview/bin:${HOME}/.scripts"
 export PATH="$PATH:/opt/texlive/2018/bin/x86_64-linux"
 export PS1="%B%{$(tput setaf 1)%}[%{$(tput setaf 5)%}%n%{$(tput setaf 1)%}@%{$(tput setaf 6)%}%M%{$(tput setaf 1)%}]%b%{$(tput setaf 7)%}:%B%{$(tput setaf 4)%}%~ %b%{$(tput setaf 7)%}"
 
