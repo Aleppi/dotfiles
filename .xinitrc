@@ -12,5 +12,6 @@ xrandr --setprovideroffloadsink nouveau Intel
 #xinput --disable "14"
 xinput --disable "10"
 xbacklight -set 100
+create_ap --config /etc/create_ap.conf
 exec bspwm
 #exec ck-launch-session dbus-launch --exit-with-session bspwm
