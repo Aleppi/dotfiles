@@ -1,5 +1,0 @@
-#!/bin/sh
-if [ ! -d "$HOME/Pictures/Screenshots" ]; then
-    mkdir -p $HOME/Pictures/Screenshots
-fi
-scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png

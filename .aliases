@@ -9,8 +9,6 @@ alias shutdown='sudo shutdown now'
 alias reboot='sudo reboot'
 alias hibernate='sudo pm-hibernate'
 alias sleep='sudo pm-suspend'
-alias zzz='sudo zzz'
-alias ZZZ='sudo ZZZ'
 
 alias lla='ls -alF --group-directories-first --color=always'
 alias ll='ls -l --group-directories-first --color=always'
