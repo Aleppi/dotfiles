@@ -1,11 +1,11 @@
 # open terminal
-ctrl - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+ctrl - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~ &> /dev/null
 
 # open Firefox
 ctrl - w : open -na Firefox
 
-ctrl - d : /Applications/Alacritty.app/Contents/MacOS/alacritty -e ranger
-ctrl + shift -d : open -na Finder
+#ctrl - d : /Applications/Alacritty.app/Contents/MacOS/alacritty -e ranger
+#ctrl + shift -d : open -na Finder
 
 ctrl - q : yabai -m window --close
 ctrl + shift - q : command kill -KILL $(yabai -m query --windows --window | grep pid | cut -d":" -f 2 | cut -d"," -f1)

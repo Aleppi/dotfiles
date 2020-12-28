@@ -12,6 +12,8 @@ zstyle :compinstall filename '/Users/aleppi/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+# Completion for kitty
+kitty + complete setup zsh | source /dev/stdin
 
 source $HOME/.aliases
 source $HOME/.variables
@@ -24,8 +26,10 @@ for bindir in ${GNUBINS[@]}; do
   export PATH=$bindir:$PATH;
 done;
 
-export PATH="$PATH:${HOME}/.local/bin:${HOME}/.local/share/nvim/plugged/vim-live-latex-preview/bin:${HOME}/.scripts"
+export PATH="$PATH:${HOME}/.local/bin:${HOME}/.local/share/nvim/plugged/vim-live-latex-preview/bin:${HOME}/.scripts:/usr/local/texlive/2020/bin/x86_64-darwin"
 export PS1="%B%{$(tput setaf 1)%}[%{$(tput setaf 5)%}%n%{$(tput setaf 1)%}@%{$(tput setaf 6)%}%M%{$(tput setaf 1)%}]%b%{$(tput setaf 7)%}:%B%{$(tput setaf 4)%}%~ %b%{$(tput setaf 7)%}"
+export MANPATH="/usr/local/texlive/2020/texmf-dist/doc/man"
+export INFOPATH="/usr/local/texlive/2020/texmf-dist/doc/info"
 
 ranger() {
     if [ -z "$RANGER_LEVEL" ]; then

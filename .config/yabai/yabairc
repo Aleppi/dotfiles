@@ -32,11 +32,11 @@ yabai -m config left_padding                 20
 yabai -m config right_padding                20
 yabai -m config window_gap                   20
  
-yabai -m rule --add app="^System Preferences$" manage=off
-yabai -m rule --add app="^Mail$" manage=off
-yabai -m rule --add app="^Calculator$" manage=off
-yabai -m rule --add app="^Reminders$" manage=off
-yabai -m rule --add app="^Flux$" manage=off
+yabai -m rule --add app="^System Preferences$" layer=above manage=off
+#yabai -m rule --add app="^Mail$" layer=above manage=off
+yabai -m rule --add app="^Calculator$" layer=above manage=off
+yabai -m rule --add app="^Reminders$" layer=above manage=off
+yabai -m rule --add app="^Flux$" layer=above manage=off
 
 echo "yabai configuration loaded.." 
 
