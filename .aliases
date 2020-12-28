@@ -52,7 +52,7 @@ alias TC='texclear'
 # alias YT="youtube-viewer"
 
 # GitPi
-alias gitpi='ssh gitpi'
+alias gitpi='ssh pi@$GITPI_IP'
 
 alias pycharm='sh ~/.local/bin/pycharm-2018.3.5/bin/pycharm.sh'
 
