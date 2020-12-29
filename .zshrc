@@ -41,9 +41,6 @@ ranger() {
 
 #(cat ~/.cache/wal/sequences &)
 
-
-
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/usr/local/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -61,3 +58,8 @@ unset __conda_setup
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 #eval "$(starship init zsh)"
+
+# SSH alias for kitty
+if [ "$TERM" = "xterm-kitty" ]; then
+    alias ssh="kitty +kitten ssh"
+fi

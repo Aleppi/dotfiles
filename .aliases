@@ -54,9 +54,8 @@ alias TC='texclear'
 # GitPi
 alias gitpi='ssh pi@$GITPI_IP'
 
-alias pycharm='sh ~/.local/bin/pycharm-2018.3.5/bin/pycharm.sh'
-
 # Alias python3, pip3 and conda to anaconda 3 versions:
 #alias python3='~/anaconda3/bin/python'
 #alias pip3='~/anaconda3/bin/pip'
 #alias conda='~/anaconda3/bin/conda'
+
