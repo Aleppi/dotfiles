@@ -20,13 +20,15 @@ source $HOME/.variables
 source /etc/profile
 #export PS1="[%n@%M]:%~ "
 
+export GPG_TTY=$(tty)
+
 export GNUBINS="$(find /usr/local/opt -type d -follow -name gnubin -print)";
 
 for bindir in ${GNUBINS[@]}; do
   export PATH=$bindir:$PATH;
 done;
 
-export PATH="$PATH:${HOME}/.local/bin:${HOME}/.local/share/nvim/plugged/vim-live-latex-preview/bin:${HOME}/.scripts:/usr/local/texlive/2020/bin/x86_64-darwin"
+export PATH="/usr/local/bin:$PATH:${HOME}/.local/bin:${HOME}/.local/share/nvim/plugged/vim-live-latex-preview/bin:${HOME}/.scripts:/usr/local/texlive/2020/bin/x86_64-darwin"
 export PS1="%B%{$(tput setaf 1)%}[%{$(tput setaf 5)%}%n%{$(tput setaf 1)%}@%{$(tput setaf 6)%}%M%{$(tput setaf 1)%}]%b%{$(tput setaf 7)%}:%B%{$(tput setaf 4)%}%~ %b%{$(tput setaf 7)%}"
 export MANPATH="/usr/local/texlive/2020/texmf-dist/doc/man"
 export INFOPATH="/usr/local/texlive/2020/texmf-dist/doc/info"
