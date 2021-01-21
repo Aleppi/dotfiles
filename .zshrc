@@ -35,7 +35,7 @@ export INFOPATH="/usr/local/texlive/2020/texmf-dist/doc/info"
 
 ranger() {
     if [ -z "$RANGER_LEVEL" ]; then
-        /usr/bin/ranger "$@"
+        /usr/local/bin/ranger "$@"
     else
         exit
     fi
