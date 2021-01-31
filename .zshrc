@@ -34,6 +34,7 @@ export MANPATH="/usr/local/texlive/2020/texmf-dist/doc/man"
 export INFOPATH="/usr/local/texlive/2020/texmf-dist/doc/info"
 export VISUAL=nvim
 export EDITOR=nvim
+export LANG=en_SE.utf8
 
 
 ranger() {
