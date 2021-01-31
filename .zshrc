@@ -22,16 +22,19 @@ source /etc/profile
 
 export GPG_TTY=$(tty)
 
-export GNUBINS="$(find /usr/local/opt -type d -follow -name gnubin -print)";
+#export GNUBINS="$(find /usr/local/opt -type d -follow -name gnubin -print)";
 
-for bindir in ${GNUBINS[@]}; do
-  export PATH=$bindir:$PATH;
-done;
+#for bindir in ${GNUBINS[@]}; do
+#  export PATH=$bindir:$PATH;
+#done;
 
-export PATH="/usr/local/bin:$PATH:${HOME}/.local/bin:${HOME}/.local/share/nvim/plugged/vim-live-latex-preview/bin:${HOME}/.scripts:/usr/local/texlive/2020/bin/x86_64-darwin"
+export PATH="/usr/local/bin:$PATH:${HOME}/.local/bin:${HOME}/.local/share/nvim/plugged/vim-live-latex-preview/bin:${HOME}/.scripts:/usr/local/texlive/2020/bin/x86_64-darwin:${HOME}/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin"
 export PS1="%B%{$(tput setaf 1)%}[%{$(tput setaf 5)%}%n%{$(tput setaf 1)%}@%{$(tput setaf 6)%}%M%{$(tput setaf 1)%}]%b%{$(tput setaf 7)%}:%B%{$(tput setaf 4)%}%~ %b%{$(tput setaf 7)%}"
 export MANPATH="/usr/local/texlive/2020/texmf-dist/doc/man"
 export INFOPATH="/usr/local/texlive/2020/texmf-dist/doc/info"
+export VISUAL=nvim
+export EDITOR=nvim
+
 
 ranger() {
     if [ -z "$RANGER_LEVEL" ]; then

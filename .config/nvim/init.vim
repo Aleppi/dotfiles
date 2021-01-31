@@ -14,7 +14,7 @@ endif
 
 " Load vim-plug
 silent! if plug#begin('~/.local/share/nvim/plugged')
-    Plug 'bfrg/vim-cpp-enhanced-highlight',
+    Plug 'octol/vim-cpp-enhanced-highlight',
     Plug 'dylanaraps/wal.vim'
     Plug 'ying17zi/vim-live-latex-preview'
     Plug 'junegunn/goyo.vim'
@@ -34,18 +34,19 @@ silent! if plug#begin('~/.local/share/nvim/plugged')
     Plug 'majutsushi/tagbar'  " show tags in a bar (functions etc) for easy browsing
     Plug 'davidhalter/jedi-vim'   " jedi for python
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  "to highlight files in nerdtree
-    Plug 'Vimjas/vim-python-pep8-indent'  "better indenting for python
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    "Plug 'Vimjas/vim-python-pep8-indent'  "better indenting for python
     Plug 'kien/ctrlp.vim'  " fuzzy search files
     Plug 'tweekmonster/impsort.vim'  " color and sort imports
     Plug 'wsdjeg/FlyGrep.vim'  " awesome grep on the fly
-    Plug 'w0rp/ale'  " python linters
+    "Plug 'w0rp/ale'  " python linters
     Plug 'airblade/vim-gitgutter'  " show git changes to files in gutter
     Plug 'tpope/vim-commentary'  "comment-out by gc
-    Plug 'roxma/nvim-yarp'  " dependency of ncm2
-    Plug 'ncm2/ncm2'  " awesome autocomplete plugin
-    Plug 'HansPinckaers/ncm2-jedi'  " fast python completion (use ncm2 if you want type info or snippet support)
-    Plug 'ncm2/ncm2-bufword'  " buffer keyword completion
-    Plug 'ncm2/ncm2-path'  " filepath completion
+    "Plug 'roxma/nvim-yarp'  " dependency of ncm2
+    "Plug 'ncm2/ncm2'  " awesome autocomplete plugin
+    "Plug 'HansPinckaers/ncm2-jedi'  " fast python completion (use ncm2 if you want type info or snippet support)
+    "Plug 'ncm2/ncm2-bufword'  " buffer keyword completion
+    "Plug 'ncm2/ncm2-path'  " filepath completion
 
     call plug#end()
 endif
@@ -163,7 +164,7 @@ map <leader>l :set list!<CR> " Toggle tabs and EOL
 "set background=dark
 "let g:hybrid_termcolors=256
 "let g:hybrid_termtrans=1
-colorscheme wal
+"colorscheme wal
 hi Normal ctermbg=none
 
 " Tabs to spaces
@@ -336,71 +337,138 @@ set undoreload=100000  " maximum number lines to save for undo on a buffer reloa
 noremap <C-u> :NERDTreeToggle<CR>
 noremap <C-t> :set nosplitright<CR>:TagbarToggle<CR>:set splitright<CR>
 
-" ncm2 settings
-autocmd BufEnter * call ncm2#enable_for_buffer()
-set completeopt=menuone,noselect,noinsert
-" " make it FAST
-let ncm2#popup_delay = 5
-let ncm2#complete_length = [[1,1]]
-let g:ncm2#matcher = 'substrfuzzy'
+" TextEdit might fail if hidden is not set.
+set hidden
 
-set pumheight=5
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
 
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <silent> <expr> <CR> (pumvisible() && empty(v:completed_item)) ?  "\<c-y>\<cr>" : "\<CR>"
+" Give more space for displaying messages.
+set cmdheight=2
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+set scl=no
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+"if has("patch-8.1.1564")
+"  " Recently vim can merge signcolumn and number column into one
+"  set signcolumn=number
+"else
+"  set signcolumn=yes
+"endif
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 "auto indent for brackets
-nmap <leader>w :w!<cr>
+"nmap <leader>w :w!<cr>
 "nmap <leader>q :lcl<cr>:q<cr>
-nnoremap <leader>h :nohlsearch<Bar>:echo<CR>
+"nnoremap <leader>h :nohlsearch<Bar>:echo<CR>
 "
 " FlyGrep settings
 "nnoremap <leader>s :FlyGrep<cr>
 
 " ale options
-let g:ale_python_flake8_options = '--ignore=E129,E501,E302,E265,E241,E305,E402,W503'
-let g:ale_python_pylint_options = '-j 0 --max-line-length=120'
-let g:ale_list_window_size = 4
-let g:ale_sign_column_always = 0
+"let g:ale_python_flake8_options = '--ignore=E129,E501,E302,E265,E241,E305,E402,W503'
+"let g:ale_python_pylint_options = '-j 0 --max-line-length=120'
+"let g:ale_list_window_size = 4
+"let g:ale_sign_column_always = 0
 "let g:ale_open_list = 1
 "let g:ale_keep_list_window_open = '1'
 
 " Options are in .pylintrc!
 "highlight VertSplit ctermbg=253
 
-let g:ale_sign_error = '‼'
-let g:ale_sign_warning = '∙'
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = '0'
-let g:ale_lint_on_save = '1'
-nmap <silent> <C-M> <Plug>(ale_previous_wrap)
-nmap <silent> <C-m> <Plug>(ale_next_wrap)
+"let g:ale_sign_error = '‼'
+"let g:ale_sign_warning = '∙'
+"let g:ale_lint_on_text_changed = 'never'
+"let g:ale_lint_on_enter = '0'
+"let g:ale_lint_on_save = '1'
+"nmap <silent> <C-M> <Plug>(ale_previous_wrap)
+"nmap <silent> <C-m> <Plug>(ale_next_wrap)
 
 " highlight python and self function
-autocmd BufEnter * syntax match Type /\v\.[a-zA-Z0-9_]+\ze(\[|\s|$|,|\]|\)|\.|:)/hs=s+1
-autocmd BufEnter * syntax match pythonFunction /\v[[:alnum:]_]+\ze(\s?\()/
-hi def link pythonFunction Function
-autocmd BufEnter * syn match Self "\(\W\|^\)\@<=self\(\.\)\@="
-highlight self ctermfg=239
+"autocmd BufEnter * syntax match Type /\v\.[a-zA-Z0-9_]+\ze(\[|\s|$|,|\]|\)|\.|:)/hs=s+1
+"autocmd BufEnter * syntax match pythonFunction /\v[[:alnum:]_]+\ze(\s?\()/
+"hi def link pythonFunction Function
+"autocmd BufEnter * syn match Self "\(\W\|^\)\@<=self\(\.\)\@="
+"highlight self ctermfg=239
 
 " jedi options
-let g:jedi#auto_initialization = 1
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#smart_auto_mappings = 0
-let g:jedi#popup_on_dot = 0
-let g:jedi#completions_command = ""
-let g:jedi#show_call_signatures = "1"
-let g:jedi#show_call_signatures_delay = 0
-let g:jedi#use_tabs_not_buffers = 0
-let g:jedi#show_call_signatures_modes = 'i'  " ni = also in normal mode
-let g:jedi#enable_speed_debugging=0
+"let g:jedi#auto_initialization = 1
+"let g:jedi#completions_enabled = 0
+"let g:jedi#auto_vim_configuration = 0
+"let g:jedi#smart_auto_mappings = 0
+"let g:jedi#popup_on_dot = 0
+"let g:jedi#completions_command = ""
+"let g:jedi#show_call_signatures = "1"
+"let g:jedi#show_call_signatures_delay = 0
+"let g:jedi#use_tabs_not_buffers = 0
+"let g:jedi#show_call_signatures_modes = 'i'  " ni = also in normal mode
+"let g:jedi#enable_speed_debugging=0
 
 " Impsort option
-hi pythonImportedObject ctermfg=127
-hi pythonImportedFuncDef ctermfg=127
-hi pythonImportedClassDef ctermfg=127
+"hi pythonImportedObject ctermfg=127
+"hi pythonImportedFuncDef ctermfg=127
+"hi pythonImportedClassDef ctermfg=127
 
 " Remove all trailing whitespace by pressing C-S
 "nnoremap <C-S> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>

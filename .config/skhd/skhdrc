@@ -72,5 +72,5 @@ ctrl + shift - n : yabai -m space --focus prev
 #  | jq -sre "add | map(select(.minimized != 1)) | sort_by(.display, .frame.y, .frame.y, .id) | nth(index(map(select(.focused == 1))) - 1).id" \
 #  | xargs -I{} yabai -m window --focus {}
 
-ctrl - r : skhd --reload
+#ctrl - r : skhd --reload
 ctrl + shift - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"; skhd --reload
