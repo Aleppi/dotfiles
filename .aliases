@@ -53,6 +53,7 @@ alias TC='texclear'
 
 # GitPi
 alias gitpi='ssh pi@$GITPI_IP'
+alias desktop='ssh aleppi@$GITPI_IP -p 32'
 
 # Alias python3, pip3 and conda to anaconda 3 versions:
 #alias python3='~/anaconda3/bin/python'
